@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+.vscode
+.idea
+*.log
+*.tmp
+*.tmp.*
+www
+tmp/
+temp/
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
