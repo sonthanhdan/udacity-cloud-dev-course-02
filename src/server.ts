@@ -39,7 +39,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   // new endpoint
   app.get("/filteredimage", async (req, res, next) => {
-    const imageUrl = req.query.image_url;
+    const imageUrl = req.query.image_url as string;
     if (!imageUrl) {
       res.status(400).send('image_url can not be empty')
       return
@@ -58,7 +58,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       res.sendFile(filteredPath, sendFileCallback);
     } catch (error) {
       console.log(error)
-      res.status(500).send('Internal Error')
+      res.status(422).send('Unprocessable Entity')
     }
   });
   
